@@ -68,7 +68,7 @@ public class Metodos {
     }
 
     public static void updateEgypt(MongoCollection collection) {
-        System.out.println("\nBuscando Egypt para actualizar...");
+        System.out.println("\nBuscando pais Egypt para actualizar...");
 
         BasicDBObject query = new BasicDBObject();
         query.put("nombrePais", "Egypt");
@@ -86,8 +86,8 @@ public class Metodos {
 
     }
 
-    public static void delete258(MongoCollection collection) {
-        System.out.println("\nBuscando código 258 para eliminarlo de la colección...");
+    public static void deleteCod258(MongoCollection collection) {
+        System.out.println("\nBuscando código 258");
 
         BasicDBObject query = new BasicDBObject();
         query.put("codigoPais", 258);
@@ -111,7 +111,7 @@ public class Metodos {
     }
 
     public static void ordenadoPorNombre(MongoCollection collection) {
-        System.out.println("\nPaises ordenado por nombre (Ascendente): ");
+        System.out.println("\nPaises ordenado por nombre Ascendente: ");
 
         MongoCursor<Document> cursor = collection.find().sort(new BasicDBObject("nombrePais", 1)).iterator();
 

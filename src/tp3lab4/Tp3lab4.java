@@ -63,13 +63,13 @@ public class Tp3lab4 {
                         document.append("capitalPais", paisJson.get("capital"));
                         document.append("region", paisJson.get("region"));
                         document.append("poblacion", paisJson.get("population"));
-                        List coorGeo = (List) paisJson.get("latlng");
-                        document.append("latitud", (double) coorGeo.get(0));
-                        document.append("longitud", (double) coorGeo.get(1));
+                        List coord = (List) paisJson.get("latlng");
+                        document.append("latitud", (double) coord.get(0));
+                        document.append("longitud", (double) coord.get(1));
                         document.append("superficie", paisJson.get("area"));
                         collection.insertOne(document);
                         document.clear();
-                        System.out.println("Pais encontrado, código: " + i);
+                        System.out.println("Existe el pais , código: " + i);
                     }
                 } else {
                     continue;
@@ -85,7 +85,7 @@ public class Tp3lab4 {
          met.regionPoblacion(collection);
          met.distintoAfrica(collection);
          met.updateEgypt(collection);
-         met.delete258(collection);
+         met.deleteCod258(collection);
          met.poblacionMayorqueMenorque(collection);
          met.ordenadoPorNombre(collection);
          met.codigoAindex(collection);
